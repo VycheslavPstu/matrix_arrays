@@ -4,11 +4,11 @@
 
 using namespace std;
 
-const int list_size = 11;
+const int list_size = 2;
 
 int main(){
     int i, j;
-    int list[list_size] = {5, 6, 7, 8, 9, 10, 5, 6, 7, 8, 9}; // Пример массива
+    int list[list_size] = {5, 6}; // Пример массива
     int matrix[list_size][list_size];
     
     if (list_size % 2 != 0){ //Проверка на чётность одномерного массива
@@ -18,6 +18,12 @@ int main(){
                 if (j%2 == 0){matrix[i][j] = -1;}
                 else {matrix[i][j] = 1;}
                 }}}
+    else if(list_size == 2){
+        for (int i = 0; i < list_size; i++) {
+            matrix[i][0] = list[i]*2;
+            matrix[i][1] = -list[i];
+        }
+    }
     else { //Если чётный, то гасит погрешность
         for (int i = 0; i < list_size; i++) {
             matrix[i][0] = list[i];
